@@ -132,9 +132,10 @@ def main():
   dataFrame2Array(X_test, X_test_img)
 
   print("Fitting data...")
-  #model = KNeighborsClassifier(n_neighbors=5,algorithm='kd_tree' ,leaf_size=20)
+  #model = KNeighborsClassifier(n_neighbors=5)
   #model = OutputCodeClassifier(LinearSVC(random_state=2), code_size=2, random_state=3)
   #model = SVC(C=1e5)
+
   #model = GaussianNB()
   model = RandomForestClassifier(n_estimators=50)
 

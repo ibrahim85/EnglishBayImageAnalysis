@@ -18,6 +18,7 @@ Scripts to generate the models and print the classification report to terminal. 
 ---
 ## How to Run:
 To run model that classifies images into their corresponding weather conditions:
+(Original image files not included, please refer to sample_imgs folder to view original format)
 
 Recommended usage:
 ``` python3 WeatherClassifier.py -d -e ```
@@ -73,4 +74,8 @@ The following python modules are required to run the scripts
 
 if running image preprocessing:
 6. cv2
+
+---
+## Photo Credits:
+http://www.katkam.ca/
 
