@@ -9,6 +9,12 @@ The github link for this application is here: https://github.com/selh/ML-Weather
 ---
 ## Overview
 
+WeatherClassifier.py generates a model that classifies weather into categories such as Rain, Clear, Cloudy... The mode was trained using images of English Bay and data from GHCN. TimeofDay.py generates a model to tell the time of day based on the same data. The models were trained using RandomForestClassifier on black and white images. The images were first run through a pre-processing step using image_preprocess.py in order to equalize the contrast in the images and eliminate lighting variations. Note that these models are only trained on weather data collected at YVR-airport and images of English Bay and may not work on other images of the sky.
+
+### Cleaning Process 
+
+The YVR dataset description column had many null values and ambiguous weather descriptions. To clean the description, I used a regex matcher to remove all extraneous words such as Mostly, Mainly, Moderate, Heavy, etc. This cleaning process can be found in WeatherClassifier.py, function name CleanDescription().  After I cleaned the descriptions, I imputed the values in order to fill the null rows with the most recent observed value. I did this in part to account for the slight location differences of the collected image and weather data. In addition, I also decided to remove certain weather conditions such as “Drizzle” and “Thunderstorms” as they had no perceivable differences with those labelled as rain or cloudy in the images provided.
+
 Scripts to generate the models and print the classification report to terminal. Main python scripts are: 
 1) WeatherClassifier.py
 2) TimeofDay.py 
